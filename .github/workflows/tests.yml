@@ -16,12 +16,11 @@ jobs:
   test-bot:
     strategy:
       matrix:
+        # macOS only: the formulas here are built from macOS-only releases, so
+        # they carry no url/sha256 outside `if OS.mac?` and Linuxbrew rejects
+        # them as invalid. Add the Linux runner back once a formula ships
+        # Linux bottles.
         os: [ macos-26 ]
-        include:
-          - os: ubuntu-latest
-            container:
-              image: ghcr.io/homebrew/brew:main
-              options: --privileged
     runs-on: ${{ matrix.os }}
     container: ${{ fromJSON(toJSON(matrix.container)) }} # zizmor: ignore[unpinned-images]
     permissions:
