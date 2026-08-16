@@ -47,7 +47,15 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-tap-syntax
+      # Not `brew test-bot --only-tap-syntax`: that runs `brew audit`, which
+      # measures formulas against homebrew-core conventions. Ours are generated
+      # by cargo-dist, which always emits an explicit `version` line that audit
+      # calls redundant — unfixable here short of patching dist or hand-editing
+      # every release. `brew style` still catches malformed Ruby and
+      # `brew readall` catches a formula that does not load.
+      - run: brew style oberbichler/tap
+      - run: brew readall --aliases oberbichler/tap
+
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
 
