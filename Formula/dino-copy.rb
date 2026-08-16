@@ -1,22 +1,34 @@
 class DinoCopy < Formula
-  desc "Fast one-way directory mirror (e.g. for syncing two external USB HDDs): copies new/changed files, skips unchanged, deletes extras, preserves mtime and permissions."
+  desc "Fast one-way directory mirror for local disks"
   homepage "https://github.com/oberbichler/dino-copy"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.0/dino-copy-aarch64-apple-darwin.tar.xz"
-      sha256 "796a5e79e1cee9f929380391b78943d65106469112b7942d83e5152b70ec6f5b"
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.1/dino-copy-aarch64-apple-darwin.tar.xz"
+      sha256 "f455aac18f4e0d2eb3d198cdff548b944af67ae96f82f756e327d91d84cc2b03"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.0/dino-copy-x86_64-apple-darwin.tar.xz"
-      sha256 "e3a8038a893e8d973034036091af0e1af8cc84e8fd5665c9669a109abbb92a75"
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.1/dino-copy-x86_64-apple-darwin.tar.xz"
+      sha256 "80aaded98e70fa60b687682bff225263493b4a1e4a37d4621f26b9d8bba68289"
+    end
+  end
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.1/dino-copy-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8d1b96fb49ad3375939ddac9a48b8944a5cd8779ad4edcf59c19c850dc523302"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.1/dino-copy-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5259b8ca12cd14fd2df934e6a76265df055879e2ea2f9b6c0593b92fe77743bb"
     end
   end
   license "ISC"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "x86_64-apple-darwin":  {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -39,6 +51,12 @@ class DinoCopy < Formula
       bin.install "dino-copy"
     end
     if OS.mac? && Hardware::CPU.intel?
+      bin.install "dino-copy"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "dino-copy"
+    end
+    if OS.linux? && Hardware::CPU.intel?
       bin.install "dino-copy"
     end
 
