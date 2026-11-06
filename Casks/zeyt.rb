@@ -1,6 +1,6 @@
 cask "zeyt" do
-  version "1.3.0"
-  sha256 "310c117ab7ca79c45b9fb10be96934ccd7c9a353e4225fcb497c06552f5b9465"
+  version "1.4.0"
+  sha256 "31022a3a3311abe0694493b9bfbd901daaaef7063bf49e15ba8119fd3b67e190"
 
   url "https://github.com/oberbichler/zeyt/releases/download/v#{version}/zeyt-#{version}.zip"
   name "zeyt"
