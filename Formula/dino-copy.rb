@@ -1,25 +1,25 @@
 class DinoCopy < Formula
   desc "Fast one-way directory mirror for local disks"
   homepage "https://github.com/oberbichler/dino-copy"
-  version "0.1.3"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.3/dino-copy-aarch64-apple-darwin.tar.xz"
-      sha256 "29e54e879808d1728f841a7dc6db6b0f38321495b9d792eb5538ee32dd4b8781"
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.2.0/dino-copy-aarch64-apple-darwin.tar.xz"
+      sha256 "433d976e48d881186cadeaaf114ffab994cd2779ca7ec5ea03a4b9c4f8fcf705"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.3/dino-copy-x86_64-apple-darwin.tar.xz"
-      sha256 "25dedab9d876adf3727e1a5c6a2fcf4e705a98c650d48348b293009009f0d83e"
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.2.0/dino-copy-x86_64-apple-darwin.tar.xz"
+      sha256 "eb91923e336e5f760d7cf37d1a934e4119149eaa7f3e2fa719803b55ebd16699"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.3/dino-copy-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "7e586545303b6fedfb34327cba6290f5f13a0772c0dd7a32757e42d8c9a5294c"
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.2.0/dino-copy-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ca223c73216695529faf6b2753cf35bd9994c603296a942656713364a4108224"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oberbichler/dino-copy/releases/download/v0.1.3/dino-copy-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7e40d8cc73df8e3ad59cd75d3b7819e36ed57ec132e2c01a6c96b51ad058d664"
+      url "https://github.com/oberbichler/dino-copy/releases/download/v0.2.0/dino-copy-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3e62152978df4452d02fbc57335430146837bdd34e9d2d947b4db85dd1a9f5c3"
     end
   end
   license "ISC"
