@@ -1,6 +1,6 @@
 cask "dinocopy" do
-  version "0.3.0"
-  sha256 "f5d7f1966bb6fc226fb2b0cbb638bd744db2ec42d6fde654a1012463b23fa939"
+  version "0.3.1"
+  sha256 "17ab268386094a48451293671f13bfca62cb777d28c655d3e71b574f3de8af82"
 
   url "https://github.com/oberbichler/dino-copy/releases/download/v#{version}/DinoCopy.dmg"
   name "DinoCopy"
