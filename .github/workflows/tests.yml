@@ -52,8 +52,9 @@ jobs:
       # by cargo-dist, which always emits an explicit `version` line that audit
       # calls redundant — unfixable here short of patching dist or hand-editing
       # every release. `brew style` still catches malformed Ruby and
-      # `brew readall` catches a formula that does not load.
-      - run: brew style oberbichler/tap
+      # `brew readall` catches a formula that does not load. The formulas carry
+      # no `test do` block either, for the same reason, so that cop is skipped.
+      - run: brew style --except-cops=FormulaAudit/Test oberbichler/tap
       - run: brew readall --aliases oberbichler/tap
 
       - run: brew test-bot --only-formulae
