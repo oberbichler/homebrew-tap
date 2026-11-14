@@ -28,6 +28,7 @@ Prebuilt binaries are provided for macOS and Linux on both arm64 and x86_64.
 | Cask | Description |
 | --- | --- |
 | [`dinocopy`](https://github.com/oberbichler/dino-copy) | DinoCopy: desktop app for `dino-copy` that mirrors one disk to another (macOS) |
+| [`pdfnotator`](https://github.com/oberbichler/pdfnotator) | PDF viewer for pair-designing Typst documents with AI agents (macOS) |
 | [`zeyt`](https://github.com/oberbichler/zeyt) | Menu bar time tracking that asks what you are working on (macOS 14+) |
 
 ```sh
