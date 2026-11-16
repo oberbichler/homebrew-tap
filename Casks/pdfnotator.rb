@@ -1,6 +1,6 @@
 cask "pdfnotator" do
-  version "0.5.0"
-  sha256 "48adc87abf5512e0b2e71c31f876475c2b019c2e716aa3ac2f039ba639c47e0d"
+  version "0.6.0"
+  sha256 "49f9c6798ba4a3eeff9a3722d13f7b8026dd47eb2a186e225d2b15fb318a7f81"
 
   url "https://github.com/oberbichler/pdfnotator/releases/download/v#{version}/PDFnotator_#{version}_universal.dmg"
   name "PDFnotator"
